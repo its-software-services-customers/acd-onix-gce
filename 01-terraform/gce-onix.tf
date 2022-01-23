@@ -29,7 +29,7 @@ module "acd-onix-gce-001" {
 # Added auto snapshot here
 
 resource "google_compute_disk_resource_policy_attachment" "attachment-001" {
-  name = google_compute_resource_policy.snapshot-policy.name
+  name = google_compute_resource_policy.snapshot-policy-001.name
   disk = "acd-onix-gce-001"
   zone = "asia-southeast1-b"
 }

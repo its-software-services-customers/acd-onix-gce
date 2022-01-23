@@ -19,7 +19,7 @@ copy:
     toDir: ""
 
   - from: 02-configs/vars-${ENV.ENVIRONMENT}.tfvars
-    toDir: ""
+    toFile: "terraform.tfvars"
 
   - from: 02-configs/gce-setting-${ENV.ENVIRONMENT}.tf
     toDir: ""

@@ -14,6 +14,7 @@ sudo docker run \
 -e IASC_VCS_URL="https://github.com/its-software-services-customers/${REPO_NAME}.git" \
 -e IASC_VCS_REF=${BRANCH} \
 -e VAULT_BUCKET=${VAULT_BUCKET} \
+-e ENVIRONMENT=${ENVIRONMENT} \
 -e IASC_VAULT_SECRETS=gs://${VAULT_BUCKET}/onix/secrets.txt \
 -it gcr.io/its-artifact-commons/iasc:${VERSION} \
 init

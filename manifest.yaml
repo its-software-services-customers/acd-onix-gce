@@ -18,6 +18,9 @@ copy:
   - from: 01-terraform/*.tf
     toDir: ""
 
+  - from: 02-configs/${ENV.ENVIRONMENT}.tfvars
+    toDir: variables.tfvars
+
   - from: gs://${ENV.VAULT_BUCKET}/onix/*
     toDir: ""
 

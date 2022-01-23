@@ -2,7 +2,9 @@
 
 VERSION=v0.0.8
 REPO_NAME=acd-onix-gce
+
 BRANCH=develop
+ENVIRONMENT=development
 VAULT_BUCKET=acd-dev-vault
 
 sudo docker run \

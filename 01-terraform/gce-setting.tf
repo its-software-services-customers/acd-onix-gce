@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket  = "acd-dev-terraform-states"
+    bucket  = var.gcp_bucket
     prefix = "acd-onix-gce"
   }
   required_providers {
@@ -8,6 +8,6 @@ terraform {
   }
 }
 provider "google" {
-  project     = "acd-dev-291913"
+  project     = var.gcp_project
   region      = "asia-southeast1"
 }

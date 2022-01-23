@@ -8,7 +8,7 @@ module "acd-onix-gce-001" {
   vm_service_account = ""
   
   # For some reason the Ubuntu image will not allow terraform to connect to VM - "projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20210927"
-  boot_disk_image  = "projects/centos-cloud/global/images/centos-7-v20211214" 
+  boot_disk_image  = "projects/centos-cloud/global/images/centos-7-v20220118" 
   boot_disk_size   = 100
   public_key_file  = "id_rsa.pub"
   private_key_file = "id_rsa"

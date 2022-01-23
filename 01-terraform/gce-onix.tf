@@ -24,3 +24,30 @@ module "acd-onix-gce-001" {
   remote_exec_by_nat_ip = true
   startup_script_local_path = "startup.bash"
 }
+
+
+# Added auto snapshot here
+
+resource "google_compute_disk_resource_policy_attachment" "attachment-001" {
+  name = google_compute_resource_policy.snapshot-policy.name
+  disk = "acd-onix-gce-001"
+  zone = "asia-southeast1-b"
+}
+
+resource "google_compute_resource_policy" "snapshot-policy-001" {
+  name = "acd-onix-gce-001"
+  region = "asia-southeast1"
+  snapshot_schedule_policy {
+    schedule {
+      hourly_schedule {
+        hours_in_cycle = 6
+        start_time = "00:00"
+      }
+    }
+
+    retention_policy {
+      max_retention_days    = 7
+      on_source_disk_delete = "KEEP_AUTO_SNAPSHOTS"
+    }    
+  }
+}

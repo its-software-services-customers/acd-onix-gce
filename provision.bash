@@ -3,8 +3,8 @@
 VERSION=v0.0.8
 REPO_NAME=acd-onix-gce
 
-if [ $# -ne "2" ]; then
-    echo "Arguments <dev|prod> <init|plan|apply> are required!!!"
+if [ $# -ne "1" ]; then
+    echo "Arguments <dev|prod> are required!!!"
     exit 1
 fi
 
@@ -15,7 +15,7 @@ ENVIRONMENT=development
 if [ "${ENVIRONMENT_ALIAS}" == "dev" ]; then
     BRANCH=develop
     ENVIRONMENT=development
-else if [ "${ENVIRONMENT_ALIAS}" == "prod" ]; then
+elif [ "${ENVIRONMENT_ALIAS}" == "prod" ]; then
     BRANCH=main
     ENVIRONMENT=production
 fi

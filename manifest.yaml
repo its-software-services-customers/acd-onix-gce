@@ -18,7 +18,7 @@ copy:
   - from: 01-terraform/*.tf
     toDir: ""
 
-  - from: gs://${VAULT_BUCKET}/onix/*
+  - from: gs://${ENV.VAULT_BUCKET}/onix/*
     toDir: ""
 
 infraIasc: []

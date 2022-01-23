@@ -5,7 +5,7 @@ REPO_NAME=acd-onix-gce
 
 BRANCH=develop
 ENVIRONMENT=development
-VAULT_BUCKET=acd-dev-vault
+ENVIRONMENT_ALIAS=dev
 
 sudo docker run \
 -v $(pwd)/${REPO_NAME}-${ENVIRONMENT}:/wip/output \
@@ -13,7 +13,7 @@ sudo docker run \
 -e IASC_VCS_MODE=git \
 -e IASC_VCS_URL="https://github.com/its-software-services-customers/${REPO_NAME}.git" \
 -e IASC_VCS_REF=${BRANCH} \
--e VAULT_BUCKET=${VAULT_BUCKET} \
+-e ENVIRONMENT_ALIAS=${ENVIRONMENT_ALIAS} \
 -e ENVIRONMENT=${ENVIRONMENT} \
 -it gcr.io/its-artifact-commons/iasc:${VERSION} \
 init
